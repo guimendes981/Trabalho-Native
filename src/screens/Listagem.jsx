@@ -32,6 +32,7 @@ export default function Listagem({ navigation }) {
   };
 
   const handleNextPage = () => {
+    console.log("clicou")
     if (currentPage < totalPages) {
       setCurrentPage((prevPage) => prevPage + 1);
     }
