@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function Listagem({ navigation }) {
   const [dados, setDados] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage] = useState(40);
+  const cardsPerPage = 10; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +32,6 @@ export default function Listagem({ navigation }) {
   };
 
   const handleNextPage = () => {
-    console.log("clicou")
     if (currentPage < totalPages) {
       setCurrentPage((prevPage) => prevPage + 1);
     }
@@ -40,14 +39,14 @@ export default function Listagem({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cards de yu-gi-oh!</Text>
+      <Text style={styles.title}>Cards de Yu-Gi-Oh!</Text>
       <FlatList
         data={currentCards}
         keyExtractor={(card) => card.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Detalhes', { card }); // Navegação 
+              navigation.navigate('Detalhes', { card });
             }}
             style={styles.cardLink}
           >
@@ -91,6 +90,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginBottom: 20,
+    textAlign: 'center', 
   },
   cardLink: {
     marginBottom: 20,
@@ -98,13 +98,13 @@ const styles = StyleSheet.create({
   card: {
     borderWidth: 1,
     borderColor: '#ccc',
-    padding: 16,
+    padding: 20,
     borderRadius: 8,
     alignItems: 'center',
   },
   cardImage: {
     width: 100,
-    height: 100,
+    height: 150,
   },
   cardName: {
     fontSize: 18,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   pagination: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginTop: 20,
   },
   paginationButton: {
@@ -121,5 +121,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
+    marginHorizontal: 10, 
   },
 });
