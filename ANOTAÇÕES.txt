@@ -1,0 +1,1 @@
+Adicionei a tela de listagem, mas ainda não está funcionando, tela branca apenas com os botões de paginação, adicionado console.log para identificação.
