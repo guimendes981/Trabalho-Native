@@ -60,24 +60,25 @@ export default function Listagem({ navigation }) {
             </View>
           </TouchableOpacity>
         )}
+        ListFooterComponent={() => (
+          <View style={styles.pagination}>
+            <TouchableOpacity
+              onPress={handlePreviousPage}
+              disabled={currentPage === 1}
+              style={[styles.paginationButton, { opacity: currentPage === 1 ? 0.5 : 1 }]}
+            >
+              <Text>Anterior</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={handleNextPage}
+              disabled={currentPage === totalPages}
+              style={[styles.paginationButton, { opacity: currentPage === totalPages ? 0.5 : 1 }]}
+            >
+              <Text>Próxima</Text>
+            </TouchableOpacity>
+          </View>
+        )}
       />
-
-      <View style={styles.pagination}>
-        <TouchableOpacity
-          onPress={handlePreviousPage}
-          disabled={currentPage === 1}
-          style={[styles.paginationButton, { opacity: currentPage === 1 ? 0.5 : 1 }]}
-        >
-          <Text>Anterior</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={handleNextPage}
-          disabled={currentPage === totalPages}
-          style={[styles.paginationButton, { opacity: currentPage === totalPages ? 0.5 : 1 }]}
-        >
-          <Text>Próxima</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }
@@ -85,12 +86,12 @@ export default function Listagem({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    padding: 16,
+    padding: 90,
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
-    textAlign: 'center', 
+    textAlign: 'center',
   },
   cardLink: {
     marginBottom: 20,
@@ -121,6 +122,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    marginHorizontal: 10, 
+    marginHorizontal: 10,
   },
 });
