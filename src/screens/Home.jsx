@@ -5,23 +5,25 @@ import axios from 'axios';
 export default function HomeScreen() {
   const [countries, setCountries] = useState([]);
 
-  useEffect(() => {
+  useEffect( async() => {
     // Faz a chamada à API para buscar informações dos países
-    axios
-      .get('https://restcountries.com/v3.1/all')
+    await axios
+      .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
       .then((response) => {
         // Pega os primeiros 10 países da resposta
-        const firstTenCountries = response.data.slice(0, 10);
-        setCountries(firstTenCountries);
+        const firstTenCards = response.data;
+        console.log(response)
+        setCountries(firstTenCards);
       })
       .catch((error) => {
         console.error('Erro ao buscar países:', error);
       });
   }, []);
-
+//   console.log(countries);
   const renderItem = ({ item }) => (
     <View style={styles.countryItem}>
-      <Image style={styles.flag} source={{ uri: item.flags[0] }} />
+      {/* <Image style={styles.flag} source={{ uri: item.image_url }} /> */}
+      <Text></Text>
     </View>
   );
 
@@ -30,7 +32,7 @@ export default function HomeScreen() {
       <Text style={styles.title}>Lista de Países com Bandeiras</Text>
       <FlatList
         data={countries}
-        renderItem={renderItem}
+        renderItem={(item) => <>{item.name}</>}
         keyExtractor={(item) => item.cca2}
       />
     </View>
