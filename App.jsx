@@ -1,13 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './src/screens/LoginScreen';
-import Listagem from './src/screens/Listagem';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './src/navigation/AppNavigator';
+
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Listagem/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
+
 
