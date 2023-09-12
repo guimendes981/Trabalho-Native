@@ -12,6 +12,11 @@ export default function LoginForm({ navigation }) {
       return;
     }
 
+    if (!email.includes('@') || !email.includes('.')) {
+      setLoginError('Email inválido. Por favor, insira um email válido.');
+      return;
+    }
+
     navigation.navigate('Home');
   };
 

@@ -1,1 +1,1 @@
-ATT: LISTAGEM E PAGINAÇÃO FUNCIONANDO, LISTAGEM ESTRANHA E QUEBRANDO O LAYOUT, PAGINAÇÃO FUNCIONANDO.
+ATT: Projeto quase finalizado, cremos que falte apenas alguns detalhes estéticos.
