@@ -23,9 +23,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#003366',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   cardImage: {
+    alignSelf: 'center',
     width: 200,
     height: 300,
     borderRadius: 5,
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
   },
   cardInfo: {
     fontSize: 18,
+    marginBottom: 10,
     color: 'white',
   },
 });

@@ -50,10 +50,10 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   cardContainer: {
-    backgroundColor: 'white',
-    borderRadius: 10,
+    backgroundColor: 'lightgray',
+    borderRadius: 30,
     marginBottom: 10,
-    padding: 10,
+    padding: 15,
   },
   cardImage: {
     width: '100%',
