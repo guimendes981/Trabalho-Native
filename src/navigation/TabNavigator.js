@@ -13,7 +13,7 @@ export default function TabNavigator() {
       <Tab.Screen name="Login" component={LoginForm} />
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="RandomCard" component={RandomCard} />
-      {/* <Tab.Screen name="CardSets" component={CardSets} /> */}
+      <Tab.Screen name="CardSets" component={CardSets} />
     </Tab.Navigator>
   );
 }

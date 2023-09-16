@@ -9,7 +9,7 @@ export default function CardSets() {
     axios
       .get('https://db.ygoprodeck.com/api/v7/cardsets.php')
       .then((response) => {
-        setCardSets(response.data.data);
+        setCardSets(response.data);
       })
       .catch((error) => {
         console.error('Erro na solicitação à API:', error);
@@ -35,7 +35,7 @@ export default function CardSets() {
       <FlatList
         data={cardSets}
         renderItem={renderCardSet}
-        keyExtractor={(item) => item.set_code.toString()}
+        keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={styles.cardSetList}
       />
     </View>
